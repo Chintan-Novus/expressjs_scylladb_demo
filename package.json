@@ -1,0 +1,47 @@
+{
+  "name": "youtube-comment-system",
+  "version": "1.0.0",
+  "description": "A YouTube-like comment system with authentication, pagination, likes/dislikes, and reply functionality using Node.js, Express.js, TypeScript, and Cassandra.",
+  "main": "dist/server.js",
+  "scripts": {
+    "start": "node dist/server.js",
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "build": "tsc",
+    "migrate": "ts-node src/migrations/index.ts",
+    "migrate:fresh": "ts-node src/migrations/index.ts --fresh",
+    "seed": "ts-node src/seeders/index.ts"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "typescript",
+    "cassandra",
+    "youtube",
+    "comments"
+  ],
+  "author": "Chintan",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.3",
+    "cassandra-driver": "^4.7.2",
+    "class-validator": "^0.14.1",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-validator": "^7.2.1",
+    "jsonwebtoken": "^9.0.2",
+    "ts-node": "^10.9.2",
+    "uuid": "^11.0.5"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/body-parser": "^1.19.5",
+    "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/node": "^22.10.10",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.7.3"
+  }
+}

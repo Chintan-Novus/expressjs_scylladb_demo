@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "target": "ES2021",
+    // Specify ECMAScript target version
+    "module": "CommonJS",
+    // Node.js uses CommonJS
+    "rootDir": "./src",
+    // Root directory of the source code
+    "outDir": "./dist",
+    // Output directory for compiled JavaScript
+    "strict": true,
+    // Enable strict type-checking options
+    "esModuleInterop": true,
+    // Enable interoperability between CommonJS and ES Modules
+    "forceConsistentCasingInFileNames": true,
+    // Disallow file names with inconsistent casing
+    "skipLibCheck": true,
+    // Skip type checking of declaration files
+    "moduleResolution": "node",
+    // Resolve modules in the Node.js style
+    "resolveJsonModule": true,
+    // Allow importing JSON files
+    "noImplicitAny": true,
+    // Raise error on expressions with an `any` type
+    "typeRoots": [
+      "./src/types",
+      "./node_modules/@types"
+    ],
+    // Specify where TypeScript looks for type definitions
+    "strictNullChecks": true
+    // Enable strict null checks
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  // Include all TypeScript files in the src directory
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+  // Exclude unnecessary directories
+}

@@ -1,0 +1,36 @@
+# Node modules
+node_modules/
+
+# TypeScript build outputs
+dist/
+build/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# VS Code settings (Optional)
+.vscode/
+
+# IntelliJ IDEA project files (Optional)
+.idea/
+
+# MacOS system files (Optional)
+.DS_Store
+
+# Windows system files (Optional)
+Thumbs.db
+
+# Project-specific files
+*.tgz
+*.swp
