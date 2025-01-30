@@ -7,6 +7,7 @@ import videosRoutes from "./routes/videos.routes";
 import commentsRoutes from "./routes/comments.routes";
 import repliesRoutes from "./routes/replies.routes";
 import {authenticate} from "./middleware/authMiddleware";
+import {connectCassandra} from "./utils/cassandraClient";
 
 // Load environment variables
 dotenv.config();
@@ -30,6 +31,12 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction): void => {
 
 // Server initialization
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.info(`Server running at http://localhost:${PORT}`);
+
+connectCassandra().then(() => {
+    app.listen(PORT, () => {
+        console.info(`Server running at http://localhost:${PORT}`);
+    });
+}).catch((err) => {
+    console.error("Failed to start server due to Cassandra connection error:", err);
+    process.exit(1); // Exit if connection fails
 });
